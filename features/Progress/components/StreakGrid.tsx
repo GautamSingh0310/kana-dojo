@@ -341,7 +341,7 @@ function YearGrid({ visits }: { visits: string[]; days: string[] }) {
             {DAY_LABELS.map(label => (
               <div
                 key={label}
-                className='h-3 w-8 text-xs text-[var(--secondary-color)] flex items-center justify-end pr-2'
+                className='h-4 w-8 text-xs text-[var(--secondary-color)] flex items-center justify-end pr-2'
               >
                 {label}
               </div>
