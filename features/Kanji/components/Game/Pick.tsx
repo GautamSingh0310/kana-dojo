@@ -293,26 +293,31 @@ const KanjiPickGame = ({ selectedKanjiObjs, isHidden }: KanjiPickGameProps) => {
                 onClick={() => handleOptionClick(option)}
                 lang={isReverse ? 'ja' : undefined}
               >
-                <FuriganaText
-                  text={option}
-                  reading={
-                    isReverse
-                      ? selectedKanjiObjs.find(obj => obj.kanjiChar === option)
-                          ?.onyomi[0] ||
-                        selectedKanjiObjs.find(obj => obj.kanjiChar === option)
-                          ?.kunyomi[0]
-                      : undefined
-                  }
-                />
+                <span className={clsx(isReverse ? '' : 'flex-1 text-left')}>
+                  <FuriganaText
+                    text={option}
+                    reading={
+                      isReverse
+                        ? selectedKanjiObjs.find(
+                            obj => obj.kanjiChar === option
+                          )?.onyomi[0] ||
+                          selectedKanjiObjs.find(
+                            obj => obj.kanjiChar === option
+                          )?.kunyomi[0]
+                        : undefined
+                    }
+                  />
+                </span>
                 <span
                   className={clsx(
                     'hidden lg:inline text-xs rounded-full bg-[var(--border-color)] px-1',
+                    isReverse ? '' : 'mr-4',
                     wrongSelectedAnswers.includes(option)
                       ? 'text-[var(--border-color)]'
                       : 'text-[var(--secondary-color)]'
                   )}
                 >
-                  {i + 1 === 1 ? '1' : i + 1 === 2 ? '2' : '3'}
+                  {i + 1}
                 </span>
               </button>
             ))}

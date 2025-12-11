@@ -316,7 +316,7 @@ const PickGame = ({ isHidden }: PickGameProps) => {
             type='button'
             disabled={wrongSelectedAnswers.includes(variantChar)}
             className={clsx(
-              'text-5xl font-semibold pb-6 pt-3 w-full sm:w-1/5 flex flex-row justify-center items-center gap-1',
+              'text-5xl font-semibold pb-6 pt-3 w-full sm:w-1/5 flex flex-row justify-center items-center gap-1 relative',
               buttonBorderStyles,
               'border-b-4 ',
               wrongSelectedAnswers.includes(variantChar) &&
@@ -329,7 +329,7 @@ const PickGame = ({ isHidden }: PickGameProps) => {
             <span>{variantChar}</span>
             <span
               className={clsx(
-                'hidden lg:inline text-xs rounded-full bg-[var(--border-color)]  px-1',
+                'absolute right-2 hidden lg:inline text-xs rounded-full bg-[var(--border-color)] px-1',
                 wrongSelectedAnswers.includes(variantChar)
                   ? 'text-[var(--border-color)]'
                   : 'text-[var(--secondary-color)]'
@@ -352,7 +352,7 @@ const PickGame = ({ isHidden }: PickGameProps) => {
               type='button'
               disabled={wrongSelectedAnswers.includes(variantChar)}
               className={clsx(
-                'text-5xl font-semibold pb-6 pt-3 w-full sm:w-1/5 flex flex-row justify-center items-center gap-1',
+                'text-5xl font-semibold pb-6 pt-3 w-full sm:w-1/5 flex flex-row justify-center items-center gap-1 relative',
                 buttonBorderStyles,
                 'border-b-4 ',
                 wrongSelectedAnswers.includes(variantChar) &&
@@ -365,7 +365,7 @@ const PickGame = ({ isHidden }: PickGameProps) => {
               <span>{variantChar}</span>
               <span
                 className={clsx(
-                  'hidden lg:inline text-xs rounded-full bg-[var(--border-color)]  px-1',
+                  'absolute right-2 hidden lg:inline text-xs rounded-full bg-[var(--border-color)] px-1',
                   wrongSelectedAnswers.includes(variantChar)
                     ? 'text-[var(--border-color)]'
                     : 'text-[var(--secondary-color)]'

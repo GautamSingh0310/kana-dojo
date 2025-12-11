@@ -327,28 +327,30 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
                 lang={optionLang}
               >
                 {/* Only use FuriganaText when we need furigana (reverse mode or meaning quiz) */}
-                {isReverse || quizType === 'meaning' ? (
-                  <FuriganaText
-                    text={option}
-                    reading={
-                      isReverse
-                        ? selectedWordObjs.find(obj => obj.word === option)
-                            ?.reading
-                        : undefined
-                    }
-                  />
-                ) : (
-                  <span>{option}</span>
-                )}
+                <span className='flex-1 text-left'>
+                  {isReverse || quizType === 'meaning' ? (
+                    <FuriganaText
+                      text={option}
+                      reading={
+                        isReverse
+                          ? selectedWordObjs.find(obj => obj.word === option)
+                              ?.reading
+                          : undefined
+                      }
+                    />
+                  ) : (
+                    <span>{option}</span>
+                  )}
+                </span>
                 <span
                   className={clsx(
-                    'hidden lg:inline text-xs rounded-full bg-[var(--border-color)] px-1',
+                    'hidden lg:inline text-xs rounded-full bg-[var(--border-color)] px-1 mr-4',
                     wrongSelectedAnswers.includes(option)
                       ? 'text-[var(--border-color)]'
                       : 'text-[var(--secondary-color)]'
                   )}
                 >
-                  {i + 1 === 1 ? '1' : i + 1 === 2 ? '2' : '3'}
+                  {i + 1}
                 </span>
               </button>
             ))}
