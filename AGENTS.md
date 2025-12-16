@@ -4,6 +4,26 @@ This file provides comprehensive guidance to AI coding assistants (GitHub Copilo
 
 ---
 
+## ⚠️ IMPORTANT: Command Execution for AI Agents
+
+**When executing shell commands, ALWAYS prefix them with `cmd /c`.**
+
+Running commands directly doesn't work properly for AI agents on this Windows system. Always use:
+
+```bash
+cmd /c <your-command>
+```
+
+**Examples:**
+
+```bash
+cmd /c npm run lint
+cmd /c npm run build
+cmd /c npm run test
+```
+
+---
+
 ## ⚠️ IMPORTANT: Git Commit Requirement
 
 **After completing any code changes, you MUST PROVIDE (not execute) a combined `git add` and `git commit` command with a descriptive conventional commit message.**
