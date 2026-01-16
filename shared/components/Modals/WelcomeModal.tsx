@@ -373,29 +373,27 @@ const WelcomeModal = () => {
               </button>
             </div>
 
-            <div className='max-h-96 space-y-4 overflow-y-auto px-1'>
+            <div className='max-h-96 space-y-6 overflow-y-auto px-1'>
               {themeSets.map(themeSet => (
                 <div key={themeSet.name} className='space-y-3'>
-                  <h3 className='flex items-center gap-2 text-lg font-semibold text-[var(--main-color)]'>
+                  <div className='flex items-center gap-2 text-lg font-medium text-[var(--main-color)]'>
                     <themeSet.icon size={20} />
                     {themeSet.name}
-                  </h3>
-                  <div className='grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6'>
+                    <span className='text-sm font-normal text-[var(--secondary-color)]'>
+                      ({themeSet.themes.length})
+                    </span>
+                  </div>
+                  <div className='grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4'>
                     {themeSet.themes.map(theme => (
                       <button
                         key={theme.id}
-                        className={clsx(
-                          'cursor-pointer rounded-md border-2 p-1.5 transition-all duration-200',
-                          'overflow-hidden hover:border-[var(--main-color)]/50 active:scale-95',
-                          'h-12 w-full',
-                          localTheme === theme.id
-                            ? 'border-[var(--main-color)]'
-                            : 'border-transparent hover:border-[var(--border-color)]'
-                        )}
+                        className='cursor-pointer rounded-lg p-3 transition-all duration-200 hover:opacity-90 active:scale-95'
                         style={{
                           backgroundColor: theme.backgroundColor,
-                          color: theme.mainColor,
-                          borderColor: theme.borderColor
+                          border:
+                            localTheme === theme.id
+                              ? `1px solid ${theme.mainColor}`
+                              : `1px solid ${theme.borderColor}`
                         }}
                         onClick={() => {
                           playClick();
@@ -404,13 +402,43 @@ const WelcomeModal = () => {
                         }}
                         title={theme.id}
                       >
-                        <div className='text-center'>
-                          <div className='text-xs font-medium'>
-                            {localTheme === theme.id && '● '}
-                            {theme.id === 'long'
-                              ? 'long'
-                              : theme.id.replace('-', ' ')}
-                          </div>
+                        <div className='mb-2'>
+                          <span
+                            className='text-sm capitalize'
+                            style={{ color: theme.mainColor }}
+                          >
+                            {localTheme === theme.id && '\u2B24 '}
+                            {theme.id.replaceAll('-', ' ')}
+                          </span>
+                        </div>
+                        <div className='flex gap-1.5'>
+                          <div
+                            className='h-4 w-4 rounded-full ring-1'
+                            style={
+                              {
+                                background: theme.backgroundColor,
+                                '--tw-ring-color': theme.borderColor
+                              } as React.CSSProperties
+                            }
+                          />
+                          <div
+                            className='h-4 w-4 rounded-full ring-1'
+                            style={
+                              {
+                                background: theme.mainColor,
+                                '--tw-ring-color': theme.borderColor
+                              } as React.CSSProperties
+                            }
+                          />
+                          <div
+                            className='h-4 w-4 rounded-full ring-1'
+                            style={
+                              {
+                                background: theme.secondaryColor,
+                                '--tw-ring-color': theme.borderColor
+                              } as React.CSSProperties
+                            }
+                          />
                         </div>
                       </button>
                     ))}
@@ -455,38 +483,50 @@ const WelcomeModal = () => {
               </button>
             </div>
 
-            <div className='scrollbar-thin scrollbar-thumb-[var(--border-color)] scrollbar-track-transparent max-h-80 space-y-3 overflow-y-auto p-1 pr-2'>
-              {modalFonts.map((fontObj: (typeof modalFonts)[number]) => (
-                <button
-                  key={fontObj.name}
-                  className={clsx(
-                    'w-full cursor-pointer rounded-lg border-2 p-3 text-left transition-colors duration-200',
-                    'hover:border-[var(--main-color)]/70',
-                    localFont === fontObj.name
-                      ? 'border-[var(--main-color)] bg-[var(--background-color)]'
-                      : 'border-[var(--border-color)] bg-[var(--card-color)]'
-                  )}
-                  onClick={() => {
-                    playClick();
-                    setLocalFont(fontObj.name);
-                    setFont(fontObj.name);
-                  }}
-                >
-                  <div className={clsx('space-y-1', fontObj.font.className)}>
-                    <div className='flex items-center justify-between'>
-                      <span className='text-sm font-medium text-[var(--main-color)]'>
-                        {localFont === fontObj.name && '● '}
+            <div className='scrollbar-thin scrollbar-thumb-[var(--border-color)] scrollbar-track-transparent max-h-80 space-y-4 overflow-y-auto p-1 pr-2'>
+              <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
+                {modalFonts.map((fontObj: (typeof modalFonts)[number]) => (
+                  <button
+                    key={fontObj.name}
+                    className={clsx(
+                      'flex cursor-pointer items-center justify-center overflow-hidden rounded-xl border-0 px-4 py-4 transition-all duration-200 hover:opacity-90 active:scale-95',
+                      localFont === fontObj.name
+                        ? 'bg-[var(--background-color)]'
+                        : 'bg-[var(--card-color)]'
+                    )}
+                    style={{
+                      border:
+                        localFont === fontObj.name
+                          ? '1px solid var(--main-color)'
+                          : '1px solid var(--card-color)'
+                    }}
+                    onClick={() => {
+                      playClick();
+                      setLocalFont(fontObj.name);
+                      setFont(fontObj.name);
+                    }}
+                  >
+                    <p
+                      className={clsx(
+                        'text-center text-xl',
+                        fontObj.font.className
+                      )}
+                    >
+                      <span className='text-[var(--secondary-color)]'>
+                        {localFont === fontObj.name ? '\u2B24 ' : ''}
+                      </span>
+                      <span className='text-[var(--main-color)]'>
                         {fontObj.name}
                         {fontObj.name === 'Zen Maru Gothic' &&
                           ` ${t('steps.fonts.default')}`}
                       </span>
-                    </div>
-                    <div className='text-lg text-[var(--secondary-color)]'>
-                      かな道場
-                    </div>
-                  </div>
-                </button>
-              ))}
+                      <span className='ml-2 text-[var(--secondary-color)]'>
+                        かな道場
+                      </span>
+                    </p>
+                  </button>
+                ))}
+              </div>
               <div className='mt-4 rounded-lg bg-[var(--background-color)] p-3 text-center'>
                 <p className='text-sm text-[var(--secondary-color)]'>
                   {t('steps.fonts.moreInfo')}{' '}

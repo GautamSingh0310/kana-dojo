@@ -265,24 +265,6 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(70.0% 0.130 220.0 / 1)'
       },
       {
-        id: 'torii-sunset',
-        backgroundColor: 'oklch(22.0% 0.058 35.0 / 1)',
-        mainColor: 'oklch(75.0% 0.195 40.0 / 1)',
-        secondaryColor: 'oklch(85.0% 0.155 70.0 / 1)',
-      },
-      {
-        id: 'origami-crane',
-        backgroundColor: 'oklch(95.0% 0.008 90.0 / 1)',
-        mainColor: 'oklch(55.0% 0.220 25.0 / 1)',
-        secondaryColor: 'oklch(45.0% 0.150 20.0 / 1)'
-      },
-      {
-        id: 'matcha-cream',
-        backgroundColor: 'oklch(92.0% 0.025 140.0 / 1)',
-        mainColor: 'oklch(55.0% 0.180 140.0 / 1)',
-        secondaryColor: 'oklch(70.0% 0.120 80.0 / 1)'
-      },
-      {
         id: 'bamboo-mist',
         backgroundColor: 'oklch(24.0% 0.032 150.0 / 1)',
         mainColor: 'oklch(78.0% 0.145 145.0 / 1)',
@@ -299,12 +281,6 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(21.2% 0.039 255.0 / 1)', // cosmic graphite
         mainColor: 'oklch(93.5% 0.235 122.0 / 1)', // radiant yellow-green
         secondaryColor: 'oklch(79.5% 0.205 28.0 / 1)' // deep coral
-      },
-      {
-        id: 'yuyake',
-        backgroundColor: 'oklch(25.0% 0.058 340.0 / 1)', // dusk mauve
-        mainColor: 'oklch(90.0% 0.225 55.0 / 1)', // tangerine orange
-        secondaryColor: 'oklch(78.0% 0.130 250.0 / 1)' // cerulean blue
       },
       {
         id: 'yumemizu-deepdream',
@@ -371,12 +347,6 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(26.82% 0.0502 136.06 / 1)',
         mainColor: 'oklch(83.94% 0.2480 141.92 / 1)',
         secondaryColor: 'oklch(76.54% 0.1356 68.47 / 1)'
-      },
-      {
-        id: 'wabi',
-        backgroundColor: 'oklch(21.79% 0.0174 22.05 / 1)',
-        mainColor: 'oklch(65.46% 0.1938 31.39 / 1)',
-        secondaryColor: 'oklch(77.88% 0.0349 70.99 / 1)'
       },
       {
         id: 'matrix',
@@ -949,22 +919,10 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(81.0% 0.144 260.0 / 1)' // hydrangea blue
       },
       {
-        id: 'sakuraba',
-        backgroundColor: 'oklch(24.5% 0.044 150.0 / 1)', // dappled willow green
-        mainColor: 'oklch(93.0% 0.210 340.0 / 1)', // radiant sakura pink
-        secondaryColor: 'oklch(85.0% 0.148 262.0 / 1)' // cool hyacinth blue
-      },
-      {
         id: 'suzu',
         backgroundColor: 'oklch(14.2% 0.025 240.0 / 1)', // midnight frosted slate
         mainColor: 'oklch(98.0% 0.175 285.0 / 1)', // radiant snow silver
         secondaryColor: 'oklch(86.0% 0.120 210.0 / 1)' // icy mist blue
-      },
-      {
-        id: 'momiji-blaze',
-        backgroundColor: 'oklch(21.0% 0.042 30.0 / 1)', // dusk brown-black
-        mainColor: 'oklch(82.0% 0.214 30.0 / 1)', // maple red-orange
-        secondaryColor: 'oklch(85.0% 0.180 70.0 / 1)' // persimmon gold
       },
       {
         id: 'kumo-no-asa',
@@ -979,22 +937,10 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(81.0% 0.125 220.0 / 1)' // distant sky blue
       },
       {
-        id: 'yoru-no-mori',
-        backgroundColor: 'oklch(13.5% 0.035 55.0 / 1)', // midnight bark
-        mainColor: 'oklch(78.0% 0.155 140.0 / 1)', // moss green
-        secondaryColor: 'oklch(65.0% 0.110 190.0 / 1)' // twilight leaf
-      },
-      {
         id: 'akebono',
         backgroundColor: 'oklch(18.0% 0.030 280.0 / 1)', // shadowed indigo
         mainColor: 'oklch(94.0% 0.160 25.0 / 1)', // pale sunrise pink
         secondaryColor: 'oklch(88.0% 0.140 305.0 / 1)' // spring mist violet
-      },
-      {
-        id: 'sango-midori',
-        backgroundColor: 'oklch(22.0% 0.045 145.0 / 1)', // reef dusk
-        mainColor: 'oklch(90.0% 0.208 150.0 / 1)', // coral green
-        secondaryColor: 'oklch(82.0% 0.160 185.0 / 1)' // lagoon teal
       },
       {
         id: 'shion',
